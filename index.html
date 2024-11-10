@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel Works - Bicycle Repair & Shop</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Wheel Works</div>
+            <div class="nav-links">
+                <a href="index.html/#services">Services</a>
+                <a href="store.html">Store</a>
+                <a href="#booking">Book Service</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Your Trusted Bicycle Experts</h1>
+        <p>Professional repairs, premium products, and exceptional service</p>
+        <a href="#booking" class="btn">Book a Service</a>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Basic Tune-Up</h3>
+                <p>Complete safety check, gear adjustment, and tire inspection</p>
+                <p>$59.99</p>
+                <a href="#booking" class="btn">Book Now</a>
+            </div>
+            <div class="service-card">
+                <h3>Full Service</h3>
+                <p>Comprehensive service including brake adjustment, wheel truing, and drivetrain cleaning</p>
+                <p>$129.99</p>
+                <a href="#booking" class="btn">Book Now</a>
+            </div>
+            <div class="service-card">
+                <h3>Custom Build</h3>
+                <p>Professional assembly of your dream bike with premium components</p>
+                <p>Contact for pricing</p>
+                <a href="#contact" class="btn">Enquire</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="store" class="store">
+        <div class="store-container">
+            <h2>Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="assets/images/products/mtb.jpg" alt="Mountain Bike">
+                    <div class="product-info">
+                        <h3>Mountain Bike Pro</h3>
+                        <p>High-performance mountain bike with premium components</p>
+                        <p>$1,299.99</p>
+                        <button class="btn" onclick="alert('Added to cart')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="assets/images/products/roadbike.jpg" alt="Road Bike">
+                    <div class="product-info">
+                        <h3>Road Master Elite</h3>
+                        <p>Lightweight road bike for serious cyclists</p>
+                        <p>$1,599.99</p>
+                        <button class="btn" onclick="alert('Added to cart')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="assets/images/products/helmet.jpg" alt="Accessories">
+                    <div class="product-info">
+                        <h3>Premium Helmet</h3>
+                        <p>Safety certified bike helmet with optimal ventilation</p>
+                        <p>$89.99</p>
+                        <button class="btn" onclick="alert('Added to cart')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="form-container">
+        <h2>Book a Service</h2>
+        <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
+            <div class="form-group">
+                <label for="service">Service Type</label>
+                <select id="service" required>
+                    <option value="">Select a service</option>
+                    <option value="tune-up">Basic Tune-Up</option>
+                    <option value="full-service">Full Service</option>
+                    <option value="custom">Custom Build</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Preferred Time</label>
+                <input type="time" id="time" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <button type="submit" class="btn">Book Appointment</button>
+        </form>
+    </section>
+
+    <section id="contact" class="form-container">
+        <h2>Product Suggestion</h2>
+        <form id="suggestionForm" onsubmit="handleSuggestionSubmit(event)">
+            <div class="form-group">
+                <label for="productName">Product Name/Type</label>
+                <input type="text" id="productName" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="contactEmail">Your Email</label>
+                <input type="email" id="contactEmail" required>
+            </div>
+            <button type="submit" class="btn">Submit Suggestion</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Location</h3>
+                <p>123 Bike Street</p>
+                <p>Cycling City, CC 12345</p>
+            </div>
+            <div>
+                <h3>Hours</h3>
+                <p>Mon-Fri: 9am - 6pm</p>
+                <p>Sat: 10am - 4pm</p>
+                <p>Sun: Closed</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: info@wheelworks.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            // In a real application, this would send data to a server
+            alert('Thank you for booking! We will contact you to confirm your appointment.');
+            event.target.reset();
+        }
+
+        function handleSuggestionSubmit(event) {
+            event.preventDefault();
+            // In a real application, this would send data to a server
+            alert('Thank you for your suggestion! We will review it and get back to you.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
